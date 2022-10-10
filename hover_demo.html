@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hover_Test_Demo</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        background-color: #699e97;
+        width: 100%;
+        height: 100%;
+        font-family: sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .profile-container {
+        width: 300px;
+        height: 500px;
+      }
+      .profile {
+        background-color: black;
+        font-size: 20px;
+        text-align: center;
+        line-height: 100px;
+        color: #fff;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+      .profile:before,
+      .profile:after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        left: 0;
+        z-index: 5;
+      }
+      .profile:before {
+        top: -200%;
+        background-color: #e04e01;
+        transition: top 0.3s;
+      }
+      .profile:after {
+        bottom: -200%;
+        background-color: #05293e;
+        transition: bottom 0.3s;
+      }
+      .profile:hover::before {
+        top: -50%;
+      }
+      .profile:hover::after {
+        bottom: -50%;
+      }
+      .profile_detail {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: z-index 0.3s;
+        z-index: 1;
+      }
+      .profile:hover .profile_detail {
+        z-index: 10;
+      }
+      h2,h4,h6{
+        color:#fff;
+        line-height: 3rem;
+      }
+      h4{
+        color:#c9b8b8;
+      }
+      h6{
+        margin-left: 15px;
+        color:#c9b8b8;
+      }
+</style>
+  </head>
+  <body>
+    <div class="profile-container">
+      <div class="profile">
+        <div class="profile_detail">
+          <div class="card-container">
+            <img src="image/profile.png" alt="Profile Icon" width="100" height="100" />
+            <div class="details">
+                <h2>Rajeswary R</h2>
+                <h4>Languages Known</h4>
+                <h6>HTML5/CSS3/Javascript/Jquery</h6>
+               </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
